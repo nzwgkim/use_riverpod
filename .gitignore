@@ -1,3 +1,6 @@
+#Woody
+*.lock
+
 # Miscellaneous
 *.class
 *.log
