@@ -4,6 +4,8 @@ import 'package:use_riverpod/screen/state_provider_screen.dart';
 import 'package:use_riverpod/screen/future_provider_screen.dart';
 import 'package:use_riverpod/screen/stream_provider_screen.dart';
 import '../layout/default_layout.dart';
+import 'auto_dispose_modifier_screen.dart';
+import 'family_modifier_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,6 +52,26 @@ class HomeScreen extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const StreamProviderScreen(),
+                  ),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text('FamilyModifier'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const FamilyModifierScreen(),
+                  ),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text('AutoDisposeModifierScreen'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AutoDisposeModifierScreen(),
                   ),
                 );
               },
