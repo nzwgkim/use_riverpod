@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:use_riverpod/screen/state_notifier_provider_screen.dart';
 import 'package:use_riverpod/screen/state_provider_screen.dart';
 import 'package:use_riverpod/screen/future_provider_screen.dart';
+import 'package:use_riverpod/screen/stream_provider_screen.dart';
 import '../layout/default_layout.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -39,6 +40,16 @@ class HomeScreen extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const FutureProviderScreen(),
+                  ),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: const Text('StreamProvider'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const StreamProviderScreen(),
                   ),
                 );
               },
