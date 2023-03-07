@@ -18,11 +18,13 @@ class StateNotifierProviderScreen extends ConsumerWidget {
     List<ShoppingItemModel> shoppingList =
         ref.watch(shoppingListNotifierProvider);
     final shoppingNotifier = ref.watch(shoppingListNotifierProvider.notifier);
+    final List<ShoppingItemModel> shopstate = shoppingNotifier.state;
 
     return DefaultLayout(
       title: 'StateNotifierProvider',
       body: ListView(
-        children: shoppingList
+        children: shopstate
+            //shoppingList
             .map(
               (e) => CheckboxListTile(
                 value: e.hasBought,
