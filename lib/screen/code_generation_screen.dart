@@ -11,6 +11,8 @@ class CodeGenerationScreen extends ConsumerWidget {
     final state1 = ref.watch(gStateProvider);
     final autoDisposeState = ref.watch(gStateFutureProvider);
     final keepAliveState = ref.watch(gStateFuture2Provider);
+    final codeGenerationFamilyState =
+        ref.watch(gFamilyStateProvider(number1: 3, number2: 7));
 
     return DefaultLayout(
         title: 'CodeGenerationScreen',
@@ -43,6 +45,7 @@ class CodeGenerationScreen extends ConsumerWidget {
                   child: CircularProgressIndicator(),
                 ),
               ),
+              Text('codeGenerationFamilyState:$codeGenerationFamilyState'),
             ],
           ),
         ));

@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'code_generation_provider.g.dart';
@@ -32,4 +33,28 @@ Future<int> gStateFuture2(GStateFuture2Ref ref) async {
   await Future.delayed(const Duration(seconds: 2));
 
   return 10;
+}
+
+/// 2) parameter > Family parameter를 일반함수처럼 사용
+///
+
+/// Code generation을 사용하지 않은 family
+class Parameter {
+  final int number1;
+  final int number2;
+  Parameter({
+    required this.number1,
+    required this.number2,
+  });
+}
+
+final _testFamilyProvider = Provider.family<int, Parameter>((ref, parameter) {
+  return parameter.number1 * parameter.number2;
+});
+
+/// Code generation을 사용한 family
+@riverpod
+int gFamilyState(GFamilyStateRef ref,
+    {required int number1, required int number2}) {
+  return number1 * number2;
 }
