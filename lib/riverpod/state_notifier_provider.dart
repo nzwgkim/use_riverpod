@@ -51,7 +51,7 @@ class ShoppingListNotifier extends StateNotifier<List<ShoppingItemModel>> {
             ),
           ],
         );
-  void toggleHasBrought({required String name}) {
+  void toggleHasBought({required String name}) {
     state = state
         .map(
           (e) => e.name == name ? e.copyWith(hasBought: !e.hasBought) : e,

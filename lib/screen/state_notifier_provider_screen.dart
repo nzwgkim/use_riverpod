@@ -9,6 +9,8 @@ import 'package:use_riverpod/riverpod/state_notifier_provider.dart';
 //     StateNotifierProvider<ShoppingListNotifier, List<ShoppingItemModel>>((ref) {
 //   return ShoppingListNotifier();
 // });
+/// ref.watch(provider) 와
+/// ref.watch(provider.notifier).state는 같다.
 
 class StateNotifierProviderScreen extends ConsumerWidget {
   const StateNotifierProviderScreen({Key? key}) : super(key: key);
@@ -30,7 +32,7 @@ class StateNotifierProviderScreen extends ConsumerWidget {
                 value: e.hasBought,
                 title: Text('${e.name}(${e.quantity})'),
                 onChanged: (value) {
-                  shoppingNotifier.toggleHasBrought(
+                  shoppingNotifier.toggleHasBought(
                     name: e.name,
                   );
                 },
