@@ -14,38 +14,39 @@ class ProviderScreen extends ConsumerWidget {
     print('provder: $shoppingItemModelList');
 
     return DefaultLayout(
-        title: 'ProviderScreen',
-        actions: [
-          PopupMenuButton<Enum>(
-            onSelected: (value) {
-              ref.read(filterProvider.notifier).update((state) => value);
-            },
-            itemBuilder: (context) => FilterState.values
-                .map(
-                  (e) => PopupMenuItem(
-                    value: e,
-                    child: Text(e.name),
-                  ),
-                )
-                .toList(),
-          )
-        ],
-        body: ListView(
-          children: shoppingItemModelList
+      title: 'ProviderScreen',
+      actions: [
+        PopupMenuButton<Enum>(
+          onSelected: (value) {
+            ref.read(filterProvider.notifier).update((state) => value);
+          },
+          itemBuilder: (context) => FilterState.values
               .map(
-                (e) => CheckboxListTile(
-                  value: e.hasBought,
-                  title: Text('${e.name}(${e.quantity})'),
-                  onChanged: (value) {
-                    ref
-                        .read(shoppingListNotifierProvider.notifier)
-                        .toggleHasBought(
-                          name: e.name,
-                        );
-                  },
+                (e) => PopupMenuItem(
+                  value: e,
+                  child: Text(e.name),
                 ),
               )
               .toList(),
-        ));
+        )
+      ],
+      body: ListView(
+        children: shoppingItemModelList
+            .map(
+              (e) => CheckboxListTile(
+                value: e.hasBought,
+                title: Text('${e.name}(${e.quantity})'),
+                onChanged: (value) {
+                  ref
+                      .read(shoppingListNotifierProvider.notifier)
+                      .toggleHasBought(
+                        name: e.name,
+                      );
+                },
+              ),
+            )
+            .toList(),
+      ),
+    );
   }
 }
