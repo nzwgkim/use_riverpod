@@ -58,3 +58,22 @@ int gFamilyState(GFamilyStateRef ref,
     {required int number1, required int number2}) {
   return number1 * number2;
 }
+
+/// Riverpod v2 StateNotifierProvider 코드제너레이션으로 생성하기
+/// snippet: riverpod class
+@riverpod
+class GStateNotifier extends _$GStateNotifier {
+  @override
+  build() {
+    return 77; // 초기값 지정
+  }
+
+  increase() {
+    // state: 내부에서 미리 정의되어진 변수이다.
+    state++;
+  }
+
+  decrease() {
+    state--;
+  }
+}

@@ -13,7 +13,8 @@ class CodeGenerationScreen extends ConsumerWidget {
     final keepAliveState = ref.watch(gStateFuture2Provider);
     final codeGenerationFamilyState =
         ref.watch(gFamilyStateProvider(number1: 3, number2: 7));
-
+    final gstateNotifierProvider = ref.watch(gStateNotifierProvider.notifier);
+    final gstateNotifierProvider2 = ref.watch(gStateNotifierProvider);
     return DefaultLayout(
         title: 'CodeGenerationScreen',
         body: SizedBox(
@@ -21,8 +22,14 @@ class CodeGenerationScreen extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('state1:$state1'),
-              Text('autoDisposeState:${autoDisposeState.value}'),
+              Text(
+                'state1:$state1',
+                style: const TextStyle(fontSize: 20),
+              ),
+              Text(
+                'autoDisposeState:${autoDisposeState.value}',
+                style: const TextStyle(fontSize: 20),
+              ),
               autoDisposeState.when(
                 data: (data) => Text(
                   'autoDisposeState:$data',
@@ -45,7 +52,25 @@ class CodeGenerationScreen extends ConsumerWidget {
                   child: CircularProgressIndicator(),
                 ),
               ),
-              Text('codeGenerationFamilyState:$codeGenerationFamilyState'),
+              Text(
+                'codeGenerationFamilyState:$codeGenerationFamilyState',
+                style: const TextStyle(fontSize: 20),
+              ),
+              Text(
+                'gstateNotifierProvider:${gstateNotifierProvider.state}',
+                style: const TextStyle(fontSize: 20),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: () => gstateNotifierProvider.increase(),
+                      child: const Text('Increase')),
+                  ElevatedButton(
+                      onPressed: () => gstateNotifierProvider.decrease(),
+                      child: const Text('Decrease')),
+                ],
+              ),
             ],
           ),
         ));
