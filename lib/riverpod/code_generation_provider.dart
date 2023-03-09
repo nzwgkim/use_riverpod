@@ -16,3 +16,20 @@ final _testProvider = Provider<String>((ref) {
 String gState(GStateRef ref) {
   return '2Hello, ';
 }
+
+@riverpod
+Future<int> gStateFuture(GStateFutureRef ref) async {
+  await Future.delayed(const Duration(seconds: 2));
+
+  return 10;
+}
+
+@Riverpod(
+  // 기본값은 false... 살려줘라
+  keepAlive: true,
+)
+Future<int> gStateFuture2(GStateFuture2Ref ref) async {
+  await Future.delayed(const Duration(seconds: 2));
+
+  return 10;
+}

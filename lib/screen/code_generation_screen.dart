@@ -9,13 +9,42 @@ class CodeGenerationScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state1 = ref.watch(gStateProvider);
+    final autoDisposeState = ref.watch(gStateFutureProvider);
+    final keepAliveState = ref.watch(gStateFuture2Provider);
 
     return DefaultLayout(
         title: 'CodeGenerationScreen',
-        body: Column(
-          children: [
-            Text('state1:$state1'),
-          ],
+        body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('state1:$state1'),
+              Text('autoDisposeState:${autoDisposeState.value}'),
+              autoDisposeState.when(
+                data: (data) => Text(
+                  'autoDisposeState:$data',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 20),
+                ),
+                error: (err, stack) => Text('Error: $err'),
+                loading: () => const Center(
+                  child: CircularProgressIndicator(),
+                ),
+              ),
+              keepAliveState.when(
+                data: (data) => Text(
+                  'keepAliveState:$data',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 20),
+                ),
+                error: (err, stack) => Text('Error: $err'),
+                loading: () => const Center(
+                  child: CircularProgressIndicator(),
+                ),
+              ),
+            ],
+          ),
         ));
   }
 }
