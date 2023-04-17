@@ -12,6 +12,7 @@ import 'family_modifier_screen.dart';
 import 'listen_provider_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  final TextStyle style = const TextStyle(fontSize: 24);
   const HomeScreen({super.key});
 
   @override
@@ -21,7 +22,10 @@ class HomeScreen extends StatelessWidget {
         body: ListView(
           children: [
             ElevatedButton(
-              child: const Text('StateProviderScreen'),
+              child: Text(
+                'StateProviderScreen',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -31,7 +35,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('StateNotifierProviderScreen'),
+              child: Text(
+                'StateNotifierProviderScreen',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -41,7 +48,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('FutureProvider'),
+              child: Text(
+                'FutureProvider',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -51,7 +61,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('StreamProvider'),
+              child: Text(
+                'StreamProvider',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -61,7 +74,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('FamilyModifier'),
+              child: Text(
+                'FamilyModifier',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -71,7 +87,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('AutoDisposeModifierScreen'),
+              child: Text(
+                'AutoDisposeModifierScreen',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -81,7 +100,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('ListenProviderScreen'),
+              child: Text(
+                'ListenProviderScreen',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -91,7 +113,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('SelectProviderScreen'),
+              child: Text(
+                'SelectProviderScreen',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -101,7 +126,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('ProviderScreen'),
+              child: Text(
+                'ProviderScreen',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -111,7 +139,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('CodeGenerationScreen'),
+              child: Text(
+                'CodeGenerationScreen',
+                style: style,
+              ),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(

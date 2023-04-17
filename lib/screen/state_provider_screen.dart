@@ -28,8 +28,9 @@ class StateProviderScreen extends ConsumerWidget {
                       .update((state) => ++state),
                   child: const Text('Up')),
               ElevatedButton(
-                  onPressed: () => ref.read(numberProvider.notifier).state =
-                      ref.read(numberProvider.notifier).state - 1,
+                  onPressed: () => --ref.read(numberProvider.notifier).state,
+                  // () => ref.read(numberProvider.notifier).state =
+                  //     ref.read(numberProvider.notifier).state - 1,
                   // () => ref
                   //     .read(numberProvider.notifier)
                   //     .update((state) => --state),

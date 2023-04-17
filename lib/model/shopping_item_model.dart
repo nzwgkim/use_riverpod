@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// state_notifier_provider.dart 참고
+///
+
 @immutable
 class ShoppingItemModel {
   final String name;
