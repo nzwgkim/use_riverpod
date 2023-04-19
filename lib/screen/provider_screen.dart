@@ -35,7 +35,7 @@ class ProviderScreen extends ConsumerWidget {
             .map(
               (e) => CheckboxListTile(
                 value: e.hasBought,
-                title: Text('${e.name}(${e.quantity})'),
+                title: Text('${e.name}(isSpicy:${e.isSpicy})'),
                 onChanged: (value) {
                   ref
                       .read(shoppingListNotifierProvider.notifier)
