@@ -11,7 +11,7 @@ class ProviderScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final shoppingItemModelList = ref.watch(filteredShoppingListProvider);
-    print('provder: $shoppingItemModelList');
+    // print('provder: $shoppingItemModelList');
 
     return DefaultLayout(
       title: 'ProviderScreen',
